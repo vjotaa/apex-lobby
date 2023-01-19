@@ -1,16 +1,16 @@
 <script lang="ts">
     import Auth from '../components/Auth.svelte';
+    import Background from '../components/Background.svelte';
 </script>
-<div class="flex justify-center items-center h-screen w-full bg-violet">
-    <div class="bg-violet-dark h-2/5 w-2/5 rounded-3xl flex overflow-hidden">
-        <div class="p-5 w-1/2">
+<Background>
+    <div class="bg-blue-400 max-sm:mx-5 z-10 grid grid-cols-2 max-sm:grid-cols-1  max-md:mx-10 rounded-3xl overflow-hidden lg:max-w-screen-lg">
+        <div class="p-10 ">
             <Auth />
         </div>
-        <div class="p-5 w-1/2 gradient-background">
-            hola
+        <div class="max-sm:hidden p-10 pb-20 pt-5 gradient-background">
         </div>
     </div>
-</div>
+</Background>
 
 <style>
     .gradient-background {
