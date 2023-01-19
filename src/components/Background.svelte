@@ -24,7 +24,8 @@
     
 @keyframes move {
     100% {
-        transform: translate3d(0, 0, 1px) rotate(360deg);
+        transform: translateZ(-1px);
+        transform: rotate(360deg);
     }
 }
 
@@ -38,6 +39,7 @@
 }
 
 .background span {
+    z-index: -99;
     width: 16vmin;
     height: 16vmin;
     border-radius: 16vmin;
