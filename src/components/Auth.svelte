@@ -8,21 +8,25 @@
   const loginForm = form(name, password);
 
   const onLogin = async () => {
-    isSignUp = !isSignUp;
+    isSignUp = false
+  };
+  const onSignup = async () => {
+    isSignUp = true
   };
 </script>
 
-<div class="pb-20 pt-5">
+<div class="pb-20 pt-5 animate">
     <div class="w-full h-16 flex items-center rounded-xl p-2 mb-5 bg-blue-500 relative overflow-hidden">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="{isSignUp ? 'bg-blue-500' : 'bg-blue-300'} cursor-pointer bg-animated max-sm:text-sm z-10 w-1/2 button rounded-md flex items-center justify-center text-white font-bold" on:click={onLogin}>
            Inicia sesion
         </div>
          <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div class="{isSignUp ? 'bg-blue-300' : 'bg-blue-500'} cursor-pointer bg-animated max-sm:text-sm z-10 w-1/2 button rounded-md flex items-center justify-center text-white font-bold" on:click={onLogin}>
+        <div class="{isSignUp ? 'bg-blue-300' : 'bg-blue-500'} cursor-pointer bg-animated max-sm:text-sm z-10 w-1/2 button rounded-md flex items-center justify-center text-white font-bold" on:click={onSignup}>
             Registrate
         </div>
     </div>
+    {#if !isSignUp}
     <div>
         <form class="content">
             <div class="flex flex-col">
@@ -39,12 +43,46 @@
             Al iniciar sesion estas accediendo a los <span class="text-blue-100">Terminos y condiciones</span> y a la <span class="text-blue-100"> Politica de privacidad.</span>
           </p>
     </div>
+    {:else}
+    <div>
+        <form class="content">
+            <div class="flex flex-col">
+                <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Nombre completo</label>
+                <input class="bg-blue-300 h-12 rounded-md max-sm:text-sm " type="text" bind:value={$name.value} />
+            </div>
+            <div class="flex flex-col my-5">
+                <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Apellido</label>
+                <input class="bg-blue-300 h-12 rounded-md max-sm:text-sm " type="text" bind:value={$name.value} />
+            </div>
+            <div class="flex flex-col">
+                <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Email</label>
+                <input class="bg-blue-300 h-12 rounded-md max-sm:text-sm " type="text" bind:value={$name.value} />
+            </div>
+            <div class="flex flex-col my-5">
+                <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Contraseña</label>
+                <input class="bg-blue-300 h-12 rounded-md px-2 max-sm:text-sm " type="password" bind:value={$password.value} />
+            </div>
+            <div class="flex flex-col mb-5">
+                <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Confirma tu contraseña</label>
+                <input class="bg-blue-300 h-12 rounded-md px-2 max-sm:text-sm " type="password" bind:value={$password.value} />
+            </div>
+            <!-- button here -->
+          </form>
+          <p class="text-blue-200 text-sm max-sm:text-xs ">
+            Al iniciar sesion estas accediendo a los <span class="text-blue-100">Terminos y condiciones</span> y a la <span class="text-blue-100"> Politica de privacidad.</span>
+          </p>
+    </div>
+    {/if}
     <p class="mt-10 text-violet font-bold text-sm max-sm:text-xs">
         ¿Olvidaste tu contraseña?
     </p>
 </div>
 
 <style>
+
+    .animate {
+        transition: ease-in 300ms all;
+    }
     .button {
     height: 90%;
     }
