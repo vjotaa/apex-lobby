@@ -12,3 +12,10 @@
         </div>
     </div>
 </Background>
+
+
+<style>
+  .gradient-background {
+      background: linear-gradient(135deg, #7353EE 0%, #E27E60 100%);
+  }
+</style>

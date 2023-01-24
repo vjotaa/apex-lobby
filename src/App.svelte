@@ -1,9 +1,9 @@
 <script>
   import { Route, Router } from "svelte-routing";
   import Home from "./pages/Home.svelte";
-  import Profile from "./pages/Profile.svelte";
+  import Login from "./pages/Login.svelte";
 </script>
   <Router>
-      <Route component={Home} />
-      <Route path="/profile" component={Profile} />
-  </Router>
+    <Route component={Login} />
+    <Route path="/home" component={Home} />
+</Router>
