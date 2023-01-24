@@ -33,7 +33,9 @@
                 <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Contraseña</label>
                 <input class="bg-blue-300 h-12 rounded-md px-2 max-sm:text-sm " type="password" bind:value={$password.value} />
             </div>
-            <!-- button here -->
+            <!-- no se como guardar los cambios, pero eso te hace el truco en vez de escribir el estilo-->
+            <!-- --><button class="w-full h-14 items-center p-5 my-6 bg-violet rounded-xl justify-center text-white font-bold space-y-4">Login</button>
+            
           </form>
           <p class="text-blue-200 text-sm max-sm:text-xs ">
             Al iniciar sesion estas accediendo a los <span class="text-blue-100">Terminos y condiciones</span> y a la <span class="text-blue-100"> Politica de privacidad.</span>
@@ -61,4 +63,5 @@
     .bg-animated {
         transition: ease-in 300ms;
     }
+
 </style>
