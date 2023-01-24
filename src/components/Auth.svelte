@@ -15,7 +15,7 @@
   };
 </script>
 
-<div class="pb-20 pt-5 animate">
+<div class="pb-20 pt-5">
     <div class="w-full h-16 flex items-center rounded-xl p-2 mb-5 bg-blue-500 relative overflow-hidden">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="{isSignUp ? 'bg-blue-500' : 'bg-blue-300'} cursor-pointer bg-animated max-sm:text-sm z-10 w-1/2 button rounded-md flex items-center justify-center text-white font-bold" on:click={onLogin}>
@@ -28,7 +28,7 @@
     </div>
     {#if !isSignUp}
     <div>
-        <form class="content">
+        <form>
             <div class="flex flex-col">
                 <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Email</label>
                 <input class="bg-blue-300 h-12 rounded-md max-sm:text-sm " type="text" bind:value={$name.value} />
@@ -47,7 +47,7 @@
     </div>
     {:else}
     <div>
-        <form class="content">
+        <form>
             <div class="flex flex-col">
                 <label for="name" class="mb-1 text-blue-200 max-sm:text-sm ">Nombre completo</label>
                 <input class="bg-blue-300 h-12 rounded-md max-sm:text-sm " type="text" bind:value={$name.value} />
@@ -82,9 +82,6 @@
 
 <style>
 
-    .animate {
-        transition: ease-in 300ms all;
-    }
     .button {
     height: 90%;
     }
